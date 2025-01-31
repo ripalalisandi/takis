@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lacak Paket - Takis</title>
+    <style>
+      /* General Body Styling */
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        background-color: #ffffff;
+      }
+
+      /* Navbar Styling */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #000000;
+        border-bottom: 1px solid #000000;
+        position: sticky;
+        top: 0;
+        z-index: 1000; /* Pastikan navbar berada di atas elemen lainnya */
+      }
+
+      .logo {
+        font-size: 20px;
+        font-weight: bold;
+        color: #ffffff;
+      }
+
+      .navbar nav {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbar nav a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        font-size: 14px;
+      }
+
+      /* Dropdown Menu for Support */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.384);
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgb(0, 0, 0);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: rgb(0, 0, 0);
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #000000;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      /* Styling untuk track-package-container */
+      .track-package-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 8px;
+        padding: 30px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+        margin: 50px auto; /* Menambahkan margin top untuk menurunkan kontainer */
+      }
+
+      /* Styling untuk header */
+      .track-package-container h2 {
+        font-size: 24px;
+        margin-bottom: 30px; /* Menambahkan jarak antara judul dan form */
+        text-align: center;
+      }
+
+      /* Styling untuk label */
+      .track-package-container label {
+        font-size: 16px;
+        color: #000000;
+        display: block;
+        text-align: left; /* Teks label di kiri */
+        margin-bottom: 10px;
+        width: 100%;
+        padding-left: 10px; /* Memberikan padding kiri agar lebih rapi */
+      }
+
+      /* Styling untuk select dan input */
+      .track-package-container select,
+      .track-package-container input {
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 15px;
+        width: 100%;
+        max-width: 400px; /* Memastikan input dan select memiliki ukuran seragam */
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      /* Styling untuk button */
+      .track-package-container button {
+        padding: 12px 20px;
+        font-size: 16px;
+        background-color: #000000;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .track-package-container button:hover {
+        background-color: #444444;
+      }
+      /* Footer Styling */
+      footer {
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding: 15px 0;
+        position: fixed;
+        width: 95%;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .copyright,
+      .created-by {
+        font-size: 12px;
+        display: inline-block;
+        margin: 0 10px;
+      }
+
+      .copyright {
+        text-align: left;
+      }
+
+      .created-by {
+        text-align: right;
+      }
+    </style>
+    <script>
+      function checkResi() {
+        var expedition = document.getElementById("expedition").value;
+        var trackingNumber = document.getElementById("tracking-number").value;
+
+        if (!trackingNumber) {
+          alert("Harap masukkan nomor resi!");
+          return;
+        }
+
+        // Logika untuk pengecekan nomor resi bisa disesuaikan dengan API atau halaman yang valid
+        // Misalnya mengarah ke halaman tracking sesuai ekspedisi yang dipilih
+        // Untuk contoh ini, kita hanya menampilkan informasi resi di console.
+        alert(
+          "Memeriksa resi untuk ekspedisi: " +
+            expedition +
+            " dengan nomor resi: " +
+            trackingNumber
+        );
+
+        // Anda bisa mengarahkan ke halaman hasil tracking jika ada
+        // window.location.href = `https://some-tracking-page.com?expedition=${expedition}&trackingNumber=${trackingNumber}`;
+      }
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo">TAKIS®</div>
+        <nav>
+          <div class="left-nav"></div>
+          <div class="center-nav">
+            <a href="shop.html">SHOP-</a>
+
+            <div class="dropdown">
+              <a href="support.html">SUPPORT-</a>
+              <div class="dropdown-content">
+                <a href="support.html"> CUSTOMER SUPPORT</a>
+                <a href="kebijakanprivasi.html">KEBIJAKAN PRIVASI</a>
+                <a href="lacakorder.html">LACAK ORDER</a>
+                <a href="support.html">SYARAT DAN KETENTUAN</a>
+                <a href="tentangkami.html">TENTANG KAMI</a>
+              </div>
+            </div>
+          </div>
+          <div class="right-nav">
+            <a href="#" onclick="openSearchBar()">SEARCH</a>
+            <a href="#" onclick="openShoppingBagPanel()">BAG</a>
+            <a href="#" onclick="openAccountPanel()">ACCOUNT</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="track-package-container">
+      <h2>Lacak Paket Anda</h2>
+
+      <label for="expedition">Pilih Ekspedisi</label>
+      <select id="expedition" name="expedition">
+        <option value="jne">JNE</option>
+        <option value="tiki">TIKI</option>
+        <option value="pos">POS Indonesia</option>
+        <option value="gojek">GoJek</option>
+        <option value="grab">Grab</option>
+      </select>
+
+      <label for="tracking-number">Masukkan Nomor Resi</label>
+      <input
+        type="text"
+        id="tracking-number"
+        name="tracking-number"
+        placeholder="Masukkan nomor resi"
+      />
+
+      <button type="button" onclick="checkResi()">Cek Resi</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="copyright">
+        <p>NEWSLETTER</p>
+      </div>
+      <div class="created-by">
+        <p>&copy; 2025 Takis</p>
+      </div>
+    </footer>
+  </body>
+</html>

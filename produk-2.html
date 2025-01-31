@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f4;
+      }
+
+      /* Navbar Styling */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #000000;
+        color: white;
+      }
+
+      .logo {
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .navbar nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        margin-left: 20px;
+      }
+
+      /* Halaman Produk */
+      .product-page {
+        display: flex;
+        padding: 20px;
+        background-color: white;
+      }
+
+      .product-image {
+        width: 40%;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .product-image img {
+        max-width: 100%;
+        border-radius: 8px;
+      }
+
+      .product-details {
+        width: 60%;
+        padding: 10px;
+      }
+
+      .product-details h1 {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+
+      .product-details p {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      .reviews {
+        margin-top: 20px;
+      }
+
+      .reviews ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .reviews li {
+        padding: 8px;
+        background-color: #ffffff;
+        margin-bottom: 10px;
+        border-radius: 5px;
+      }
+
+      .buy-now-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .buy-now {
+        padding: 12px 20px;
+        background-color: #000000;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .buy-now:hover {
+        background-color: #2e2c2c;
+      }
+
+      .cart {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        font-size: 24px;
+        color: #333;
+        z-index: 10000;
+      }
+
+      .cart-icon {
+        font-size: 28px;
+      }
+
+      #cartCount {
+        font-size: 18px;
+        margin-left: 5px;
+        color: #000000;
+      }
+
+      /* Styling untuk Popup */
+      .payment-popup {
+        display: none;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        margin: 0 auto;
+        position: fixed;
+        top: 20%;
+        left: 90%;
+        transform: translateX(-50%);
+        z-index: 9999;
+      }
+
+      .popup-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      .dropdown {
+        position: relative;
+        width: 100%;
+      }
+
+      .dropdown-button {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .dropdown-button:hover {
+        background-color: #e0e0e0;
+      }
+
+      .dropdown-content {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        display: none;
+        z-index: 1000;
+      }
+
+      .dropdown-item {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .dropdown-item:hover {
+        background-color: #f4f4f4;
+      }
+
+      .bank-logo {
+        width: 30px;
+        height: auto;
+        margin-right: 10px;
+      }
+
+      .payment-button {
+        width: 100%;
+        padding: 12px;
+        background-color: #000000;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+
+      .payment-button:hover {
+        background-color: #1d1d1d;
+      }
+
+      /* Show dropdown on hover */
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo">TAKIS®</div>
+        <nav>
+          <a href="shop.html">SHOP</a>
+          <a href="support.html">SUPPORT</a>
+          <a href="javascript:void(0);" onclick="openCart()"
+            >Cart <span id="cartCount">0</span></a
+          >
+          <a href="javascript:void(0);" onclick="openLoginPopup()">ACCOUNT</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="product-page">
+      <!-- Gambar Produk -->
+      <div class="product-image">
+        <img
+          src="css/img/Oversized Waffle Tee - vanci_co.jpeg"
+          alt="Long Shirt Paula Striped"
+        />
+      </div>
+
+      <!-- Detail Produk -->
+      <div class="product-details">
+        <h1>03 - Long Shirt Paula Striped</h1>
+        <p>
+          This is a stylish long shirt perfect for casual wear. Comfortable and
+          trendy!
+        </p>
+
+        <!-- Ulasan Produk -->
+        <div class="reviews">
+          <h3>Reviews:</h3>
+          <ul>
+            <li>
+              <strong>John Doe:</strong> Great product! Fits perfectly. Highly
+              recommend!
+            </li>
+            <li>
+              <strong>Jane Smith:</strong> The material is very comfortable.
+              Love it!
+            </li>
+            <li><strong>Mike Johnson:</strong> Worth every penny. 5 stars!</li>
+          </ul>
+        </div>
+
+        <!-- Tombol Beli Sekarang -->
+        <div class="buy-now-container">
+          <button class="buy-now" onclick="openPaymentPopup()">
+            Beli Sekarang
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Cart Button -->
+    <div class="cart" onclick="openCart()">
+      <span class="cart-icon">🛒</span>
+      <span id="cartCount">0</span>
+    </div>
+
+    <!-- Popup Pilih Bank -->
+    <div id="paymentPopup" class="payment-popup">
+      <h3>Pilih Bank</h3>
+      <div class="dropdown">
+        <button class="dropdown-button">Pilih Bank</button>
+        <div class="dropdown-content">
+          <div class="dropdown-item" data-bank="bankA">
+            <img src="images/bca-logo.png" alt="BCA" class="bank-logo" /> BCA
+          </div>
+          <div class="dropdown-item" data-bank="bankB">
+            <img src="images/bjb-logo.png" alt="BJB" class="bank-logo" /> BJB
+          </div>
+          <div class="dropdown-item" data-bank="bankC">
+            <img src="images/bri-logo.png" alt="BRI" class="bank-logo" /> BRI
+          </div>
+          <div class="dropdown-item" data-bank="bankD">
+            <img src="images/visa-logo.png" alt="VISA" class="bank-logo" /> VISA
+          </div>
+          <div class="dropdown-item" data-bank="bankE">
+            <img
+              src="images/mandiri-logo.png"
+              alt="MANDIRI"
+              class="bank-logo"
+            />
+            MANDIRI
+          </div>
+          <div class="dropdown-item" data-bank="bankF">
+            <img src="images/bni-logo.png" alt="BNI" class="bank-logo" /> BNI
+          </div>
+          <div class="dropdown-item" data-bank="bankG">
+            <img src="images/btn-logo.png" alt="BTN" class="bank-logo" /> BTN
+          </div>
+        </div>
+      </div>
+      <button onclick="processPayment()" class="payment-button">
+        Proses Pembayaran
+      </button>
+    </div>
+
+    <script>
+      // Cart initialization
+      let cart = [];
+
+      function addToCart() {
+        cart.push("03 - Long Shirt Paula Striped");
+        updateCartCount();
+        alert("Produk berhasil ditambahkan ke troli!");
+      }
+
+      function updateCartCount() {
+        document.getElementById("cartCount").textContent = cart.length;
+      }
+
+      function openCart() {
+        alert("Troli Anda: " + cart.join(", "));
+      }
+
+      function openPaymentPopup() {
+        document.getElementById("paymentPopup").style.display = "block";
+      }
+
+      function closePaymentPopup() {
+        document.getElementById("paymentPopup").style.display = "none";
+      }
+
+      function processPayment() {
+        const selectedBank =
+          document.querySelector(".dropdown-button").innerText;
+
+        if (selectedBank === "Pilih Bank") {
+          alert("Silakan pilih bank terlebih dahulu!");
+          return;
+        }
+
+        alert(`Pembayaran melalui ${selectedBank} sedang diproses...`);
+
+        setTimeout(() => {
+          alert("Pembayaran berhasil! Terima kasih.");
+          closePaymentPopup();
+          window.location.href = "/admin/payment"; // URL admin pembayaran
+        }, 2000);
+      }
+    </script>
+  </body>
+</html>

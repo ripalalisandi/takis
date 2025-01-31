@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TAKIS</title>
+    <!-- Standard favicon -->
+    <link rel="icon" href="css/img/Attack On Titan _ AOT _ Shingeki No Kyojin _ Snk _ Jean Kirstein _ Jean Kirschtein _ aesthetics _ aesthetic _ aes.jpeg" sizes="32x32" />
+    <!-- High-resolution favicon -->
+    <link rel="icon" href="css/img/Attack On Titan _ AOT _ Shingeki No Kyojin _ Snk _ Jean Kirstein _ Jean Kirschtein _ aesthetics _ aesthetic _ aes.jpeg" sizes="64x64" />
+    <!-- iOS favicon -->
+    <link
+      rel="apple-touch-icon"
+      href="css/img/Attack On Titan _ AOT _ Shingeki No Kyojin _ Snk _ Jean Kirstein _ Jean Kirschtein _ aesthetics _ aesthetic _ aes.jpeg"
+      sizes="180x180"
+    />
+    <!--icon-->
+    <link rel="shortcut icon" href="css/img/Attack On Titan _ AOT _ Shingeki No Kyojin _ Snk _ Jean Kirstein _ Jean Kirschtein _ aesthetics _ aesthetic _ aes.jpeg" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TAKIS</title>
+ <!-- Standard favicon -->
+    <link rel="icon" href="css/img/Attack On Titan _ AOT _ Shingeki No Kyojin _ Snk _ Jean Kirstein _ Jean Kirschtein _ aesthetics _ aesthetic _ aes.jpeg" sizes="32x32" />
+    <!-- High-resolution favicon -->
+    <link rel="icon" href="css/img/Attack On Titan _ AOT _ Shingeki No Kyojin _ Snk _ Jean Kirstein _ Jean Kirschtein _ aesthetics _ aesthetic _ aes.jpeg" sizes="64x64" />
+    <!-- iOS favicon -->
+    <link
+      rel="apple-touch-icon"
+      href="css/img/Attack On Titan _ AOT _ Shingeki No Kyojin _ Snk _ Jean Kirstein _ Jean Kirschtein _ aesthetics _ aesthetic _ aes.jpeg"
+      sizes="180x180"
+    />
+    <!--icon-->
+    <link rel="shortcut icon" href="css/img/Attack On Titan _ AOT _ Shingeki No Kyojin _ Snk _ Jean Kirstein _ Jean Kirschtein _ aesthetics _ aesthetic _ aes.jpeg" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TAKIS</title>
+    <style>
+      /* General Body Styling */
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        background-color: #ffffff;
+      }
+
+      /* Navbar Styling */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #000000;
+        border-bottom: 1px solid #000000;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        font-size: 20px;
+        font-weight: bold;
+        color: #ffffff;
+      }
+
+      .navbar nav {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbar nav a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        font-size: 14px;
+      }
+
+      /* Dropdown Menu for Support */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.384);
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgb(0, 0, 0);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: rgb(0, 0, 0);
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #000000;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      /* Popup Styling */
+      .popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 1001;
+      }
+
+      .popup-content {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        width: 320px;
+        max-width: 90%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      /* Search Popup */
+      .popup input[type="text"] {
+        width: 80%;
+        padding: 8px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      .popup button {
+        background-color: #000000;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .popup button:hover {
+        background-color: #444444;
+      }
+     
+      /* Account Popup */
+      .popup a {
+        text-decoration: none;
+        color: #000000;
+        font-size: 16px;
+        display: block;
+        margin: 10px 0;
+      }
+
+      .popup a:hover {
+        color: #007bff;
+      }
+
+      .popup .btn-close {
+        background-color: #f44336;
+        border: none;
+        color: white;
+        padding: 6px 14px;
+        border-radius: 4px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      .popup .btn-close:hover {
+        background-color: #d32f2f;
+      }
+      /* Animasi Selamat Datang */
+      @keyframes welcomeAnimation {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+      }
+
+      .welcome-text {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 48px;
+      font-weight: bold;
+      color: #000000; /* Anda bisa ganti warna sesuai keinginan */
+      animation: welcomeAnimation 5s ease-in-out forwards; /* Ganti 'infinite' dengan 'forwards' */
+      z-index: 1;
+    }
+
+    </style>
+  </head>
+  <div class="welcome-text">Selamat Datang di TAKIS</div>
+
+  <body>
+    <!-- Animasi Teks Selamat Datang -->
+    <div class="welcome-text">Selamat Datang di TAKIS</div>
+    
+    <!-- Konten yang lain tetap seperti sebelumnya -->
+    <header>
+      <div class="navbar">
+        <div class="logo">TAKIS®</div>
+        <nav>
+          <div class="left-nav"></div>
+          <div class="center-nav">
+            <a href="shop.html">SHOP-</a>
+  
+            <div class="dropdown">
+              <a href="support.html">SUPPORT-</a>
+              <div class="dropdown-content">
+                <a href="support.html"> CUSTOMER SUPPORT</a>
+                <a href="kebijakanprivasi.html">KEBIJAKAN PRIVASI</a>
+                <a href="lacakorder.html">LACAK ORDER</a>
+                <a href="support.html">SYARAT DAN KETENTUAN</a>
+                <a href="tentangkami.html">TENTANG KAMI</a>
+              </div>
+            </div>
+          </div>
+          <div class="right-nav">
+            <a href="javascript:void(0);" onclick="openSearchPopup()">SEARCH</a>
+            <a href="javascript:void(0);" onclick="openBagPopup()">BAG</a>
+            <a href="javascript:void(0);" onclick="openLoginPopup()">ACCOUNT</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- ... kode lainnya tetap sama ... -->
+  </body>
+  
+    <!-- Search Popup -->
+    <div id="searchPopup" class="popup">
+      <div class="popup-content">
+        <h2>Search</h2>
+        <input type="text" placeholder="Search products..." />
+        <button onclick="closeSearchPopup()">Search</button>
+        <button class="btn-close" onclick="closeSearchPopup()">Close</button>
+      </div>
+    </div>
+
+    <!-- Account Popup -->
+    <div id="accountPopup" class="popup">
+      <div class="popup-content">
+        <h2>Account</h2>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <button class="btn-close" onclick="closeAccountPopup()">Close</button>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer
+      style="
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding: 15px 0;
+        position: fixed;
+        width: 95%;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+      "
+    >
+      <div
+        class="copyright"
+        style="text-align: left; font-size: 12px; flex-grow: 1"
+      >
+        <p>NEWSLETTER</p>
+      </div>
+      <div
+        class="created-by"
+        style="text-align: right; font-size: 12px; flex-grow: 1"
+      >
+        <p>&copy; 2025 Takis</p>
+      </div>
+    </footer>
+
+    <script>
+      // Open and close search popup
+      function openSearchPopup() {
+        document.getElementById("searchPopup").style.display = "flex";
+      }
+
+      function closeSearchPopup() {
+        document.getElementById("searchPopup").style.display = "none";
+      }
+
+      // Open and close account popup
+      function openLoginPopup() {
+        document.getElementById("accountPopup").style.display = "flex";
+      }
+
+      function closeAccountPopup() {
+        document.getElementById("accountPopup").style.display = "none";
+      }
+    </script>  
+  </body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tentang Kami - Takis Store</title>
+    <style>
+      /* General Body Styling */
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        background-color: #ffffff;
+      }
+
+      /* Navbar Styling */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #000000;
+        border-bottom: 1px solid #000000;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        font-size: 20px;
+        font-weight: bold;
+        color: #ffffff;
+      }
+
+      .navbar nav {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .navbar nav a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        font-size: 14px;
+      }
+
+      /* Dropdown Menu for Support */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.384);
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgb(0, 0, 0);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: rgb(0, 0, 0);
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #000000;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      /* Centering Main Content */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .about-section,
+      .inspiration-section {
+        background-color: #fff;
+        margin-bottom: 30px;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        color: #000000;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #000000;
+      }
+
+      .inspiration-section {
+        background-color: #e7f4ff;
+      }
+
+      .inspiration-section blockquote {
+        font-style: italic;
+        padding-left: 15px;
+        margin: 20px 0;
+        color: #000000;
+      }
+
+      .inspiration-section p {
+        color: #000000;
+        font-weight: bold;
+      }
+
+      /* Animasi untuk nama Takis berjalan */
+      .moving-text-wrapper {
+        overflow-x: scroll; /* Menambahkan scroll horizontal */
+        width: 100%; /* Agar elemen mengisi lebar layar */
+        margin-top: 40px;
+        border: 1px solid #ddd; /* border untuk menunjukkan area scroll */
+        padding-bottom: 10px; /* Menambah ruang bawah untuk scroll */
+      }
+
+      .moving-text {
+        font-size: 36px;
+        font-weight: bold;
+        color: #000000;
+        white-space: nowrap;
+        display: inline-block;
+        animation: moveText 20s linear infinite;
+      }
+
+      @keyframes moveText {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      /* Footer Styling */
+      footer {
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding: 15px 0;
+        position: fixed;
+        width: 95%;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .copyright,
+      .created-by {
+        font-size: 12px;
+        display: inline-block;
+        margin: 0 10px;
+      }
+
+      .copyright {
+        text-align: left;
+      }
+
+      .created-by {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="logo">TAKIS®</div>
+        <nav>
+          <div class="left-nav"></div>
+          <div class="center-nav">
+            <a href="shop.html">SHOP-</a>
+
+            <div class="dropdown">
+              <a href="support.html">SUPPORT-</a>
+              <div class="dropdown-content">
+                <a href="support.html"> CUSTOMER SUPPORT</a>
+                <a href="kebijakanprivasi.html">KEBIJAKAN PRIVASI</a>
+                <a href="lacakorder.html">LACAK ORDER</a>
+                <a href="support.html">SYARAT DAN KETENTUAN</a>
+                <a href="tentangkami.html">TENTANG KAMI</a>
+              </div>
+            </div>
+          </div>
+          <div class="right-nav">
+            <a href="#" onclick="openSearchBar()">SEARCH</a>
+            <a href="#" onclick="openShoppingBagPanel()">BAG</a>
+            <a href="#" onclick="openAccountPanel()">ACCOUNT</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <!-- About Section -->
+      <section class="about-section">
+        <h2>Tentang Takis</h2>
+        <p>
+          Takis adalah merek yang telah dikenal luas di seluruh dunia karena
+          camilan pedas dan gurihnya yang sangat unik. Kami di Takis Store
+          berkomitmen untuk menawarkan berbagai produk berkualitas yang dapat
+          memuaskan selera Anda. Dengan berbagai pilihan mulai dari pakaian
+          trendi, aksesori keren, hingga koleksi limited edition, kami ingin
+          memastikan setiap pelanggan merasa istimewa setiap kali berbelanja di
+          toko kami.
+        </p>
+        <p>
+          Kami percaya bahwa setiap orang berhak untuk menikmati pengalaman
+          berbelanja yang menyenangkan dan penuh gaya. Kami berusaha keras untuk
+          menyediakan produk dengan kualitas terbaik dan pelayanan yang
+          memuaskan. Takis bukan hanya sekedar toko, tetapi merupakan sebuah
+          gaya hidup yang penuh semangat dan kreativitas.
+        </p>
+      </section>
+
+      <!-- Inspiration Section -->
+      <section class="inspiration-section">
+        <h2>Inspirasi dari Takis</h2>
+        <p>
+          Takis menginspirasi Anda untuk tetap percaya diri dan berani dalam
+          mengejar impian. Kami percaya bahwa setiap individu memiliki
+          keunikannya sendiri, dan kami ingin Anda mengekspresikan diri Anda
+          dengan cara yang paling keren dan autentik.
+        </p>
+        <blockquote>
+          "Jadilah berani, jadilah berbeda, dan jangan takut untuk menjadi versi
+          terbaik dari diri Anda."
+        </blockquote>
+        <p>
+          Kami berharap Takis bisa menjadi teman perjalanan Anda dalam mengejar
+          gaya hidup yang penuh semangat. Jangan pernah takut untuk mencoba
+          hal-hal baru, dan selalu ikuti gaya Anda sendiri. Dengan Takis, gaya
+          Anda adalah pernyataan yang tak terbantahkan!
+        </p>
+      </section>
+
+      <!-- Animasi nama Takis berjalan di bawah inspirasi -->
+      <div class="moving-text-wrapper">
+        <div class="moving-text">
+          TAKIS® - Terus Berinovasi dan Menginspirasi!
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="copyright">
+        <p>NEWSLETTER</p>
+      </div>
+      <div class="created-by">
+        <p>&copy; 2025 Takis</p>
+      </div>
+    </footer>
+  </body>
+</html>
